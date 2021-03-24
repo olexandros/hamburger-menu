@@ -9,6 +9,111 @@ body {
      line-height: 1.4;
 }
 
+/* ----- Стилі для меню ----- */
+
+.menu-wrap {
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1;
+}
+
+.toggler {
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 2;
+     cursor: pointer;
+     width: 50px;
+     height: 50px;
+     opacity: 0;
+}
+
+.hamburger {
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     width: 60px;
+     height: 60px;
+     padding: 15px;
+     background-color: rgb(227, 240, 255);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+/* Лінії меню */
+
+.hamburger > div {
+     position: relative;
+     width: 100%;
+     height: 2px;
+     background-color: blue;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.4s ease;
+}
+
+/* Стилі для верхньої та нижньої лінії */
+.hamburger > div::before,
+.hamburger > div::after {
+     content: '';
+     position: absolute;
+     z-index: 1;
+     top: -10px;
+     width: 100%;
+     height: 2px;
+     background: inherit;
+}
+
+.hamburger > div::after {
+     top: 10px;
+}
+
+
+/* Анімація натиску на меню */
+.toggler:checked + .hamburger > div {
+     transform: rotate(135deg);
+}
+
+.toggler:checked + .hamburger > div::before,
+.toggler:checked + .hamburger > div::after {
+     top: 0;
+     transform: rotate(90deg);
+}
+
+
+/* Провернути меню, коли стрілочка на ньому */
+.toggler:checked:hover + .hamburger > div {
+     transform: rotate(225deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Стилі для центральної частини ----- */
+
 .content {
      background-color: dodgerblue;
      width: 100%;
